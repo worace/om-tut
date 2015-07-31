@@ -12,11 +12,16 @@
 
 (om/root
   (fn [data owner]
-    (reify om/IRender
-      (render [_]
-        (dom/h1 nil (:text data)))))
+    (om/component (dom/h2 nil (:text data))))
   app-state
-  {:target (. js/document (getElementById "app"))})
+  {:target (. js/document (getElementById "app0"))})
+
+(om/root
+ (fn [data owner]
+   (om/component (dom/h2 nil (:text data))))
+ app-state
+ {:target (. js/document (getElementById "app1"))})
+
 
 
 (defn on-js-reload []
