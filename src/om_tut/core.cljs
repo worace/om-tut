@@ -31,6 +31,7 @@
   (str last ", " first (middle-name contact)))
 
 (defn contact-view [contact owner]
+  (println "contact view")
   (reify
     om/IRenderState
     (render-state [this {:keys [delete]}]
